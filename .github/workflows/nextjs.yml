@@ -28,9 +28,9 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[build]')
     steps:
       - name: Checkout
-        if: contains(github.event.head_commit.message, '[build]')
         uses: actions/checkout@v4
       - name: Detect package manager
         id: detect-package-manager
