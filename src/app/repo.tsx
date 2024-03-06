@@ -1,3 +1,37 @@
+import { FaCircle } from "react-icons/fa6"
+import repo from "./interfaces";
+import { GoRepo, GoRepoForked, GoStar } from "react-icons/go"
+
+export default function Repo(data: repo) {
+	return (
+		<a href={data.html_url}>
+			<div className="flex flex-col">
+				<div className="flex flex-row justify-center items-center gap-1 bg-stone-800 p-2 rounded-t-xl text-lg md:p-4 md:text-2xl">
+					{data.fork ? <GoRepoForked /> : <GoRepo />}
+					<span className="text-white">{data.name}</span>
+				</div>
+				<div className="text-black/50 bg-white grid grid-cols-2 grid-rows-2 gap-x-4 rounded-b-xl p-2 text-xl md:p-4 md:text-2xl">
+					<div className="flex flex-row items-center gap-1">
+						<GoStar />
+						<span>{data.stargazers_count}</span>
+					</div>
+					<div className="flex flex-row items-center gap-1">
+						<GoRepoForked />
+						<span>{data.forks}</span>
+					</div>
+					{data.fork ?
+						<></>
+						:
+						<div className="flex flex-row items-center gap-1">
+							<FaCircle color={getLangColor(data.language)} />
+							<span>{data.language ? data.language : "Unknown"}</span>
+						</div>}
+				</div>
+			</div>
+		</a>
+	)
+}
+
 function getLangColor(lang: string | null) {
 	if (!lang) {
 		return "#7F7F7F"
