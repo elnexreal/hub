@@ -1,6 +1,8 @@
 export default interface repo extends Object {
-	name?: string
-	language?: string
-	html_url?: string
-	stargazes_count?: number
+	name: string
+	language: string | null
+	html_url: string
+	stargazers_count: number
+	forks: number
+	fork: boolean
 }
