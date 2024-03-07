@@ -44,8 +44,28 @@ export default function Home() {
 
 			<hr />
 
-			<div id="projects" className="flex flex-col items-center gap-4">
-				<span className="text-3xl md:text-5xl">GitHub repositories</span>
+			<div id="info" className="flex flex-col gap-8">
+				<h1 className="text-3xl md:text-5xl underline">Knowledge</h1>
+				<div className="flex flex-col gap-4">
+					<div>
+						<h3 className="text-lg md:text-2xl opacity-50">Programming languages...</h3>
+						<p className="text-sm md:text-lg">JavaScript, Python, C++, C#, Vlang, HTML & CSS.</p>
+					</div>
+					<div>
+						<h3 className="text-lg md:text-2xl opacity-50">Frameworks | libraries...</h3>
+						<p className="text-sm md:text-lg">React, DotNet, NextJS, Vite, ExpressJS, DiscordJS, XAML, Tailwind, Prisma.</p>
+					</div>
+					<div>
+						<h3 className="text-lg md:text-2xl opacity-50">Extras...</h3>
+						<p className="text-sm md:text-lg">NodeJS, NPM, Pip, Yarn.</p>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<div id="projects" className="flex flex-col items-center gap-8">
+				<h1 className="text-3xl md:text-5xl">GitHub repositories</h1>
 				<div className="flex flex-wrap justify-center gap-8 md:flex-row">
 					{loaded ? repos.map((repo, index) => <Repo key={index} {...repo} />) : <span>Loading</span>}
 				</div>
