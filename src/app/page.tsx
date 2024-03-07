@@ -1,9 +1,8 @@
 "use client"
 
-import { repo, response } from "./lib/interfaces";
+import { repo, response } from "./lib/interfaces"
 import { useEffect, useState } from "react"
-import Repo from "./repo";
-import fetchApi from "./lib/fetchApi";
+import Repo from "./components/repo"
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -29,30 +28,28 @@ export default function Home() {
 	}, [])
 
 	return (
-		<>
-			<div className="flex flex-col gap-8 m-10 md:m-20">
-				<div className="font-Kodemono">
-					<h1 className="text-5xl md:text-7xl">
-						elnexreal's hub
-					</h1>
-					<h6 className="text-base md:text-xl">
-						Welcome to my website
-					</h6>
-				</div>
+		<div className="flex flex-col gap-8 m-10 md:m-20">
+			<div className="font-Kodemono">
+				<h1 className="text-5xl md:text-7xl">
+					elnexreal's hub
+				</h1>
+				<h6 className="text-base md:text-xl">
+					Welcome to my website
+				</h6>
+			</div>
 
-				<p className="text-lg md:text-2xl">
-					Im a {yearsOld} years old student that likes music production, programming & graphic design.
-				</p>
+			<p className="text-lg md:text-2xl">
+				Im a {yearsOld} years old student that likes music production, programming & graphic design.
+			</p>
 
-				<hr />
+			<hr />
 
-				<div id="projects" className="flex flex-col items-center gap-4">
-					<span className="text-3xl md:text-5xl">GitHub repositories</span>
-					<div className="flex flex-wrap justify-center gap-8 md:flex-row">
-						{loaded ? repos.map((repo, index) => <Repo key={index} {...repo} />) : <span>Loading</span>}
-					</div>
+			<div id="projects" className="flex flex-col items-center gap-4">
+				<span className="text-3xl md:text-5xl">GitHub repositories</span>
+				<div className="flex flex-wrap justify-center gap-8 md:flex-row">
+					{loaded ? repos.map((repo, index) => <Repo key={index} {...repo} />) : <span>Loading</span>}
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
