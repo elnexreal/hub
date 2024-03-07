@@ -1,5 +1,5 @@
 import { FaCircle } from "react-icons/fa6"
-import repo from "./interfaces";
+import { repo } from "./lib/interfaces";
 import { GoRepo, GoRepoForked, GoStar } from "react-icons/go"
 
 export default function Repo(data: repo) {
