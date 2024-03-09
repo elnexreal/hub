@@ -1,10 +1,12 @@
+"use client"
+
 import { FaCircle } from "react-icons/fa6"
 import { repo } from "../lib/interfaces";
 import { GoRepo, GoRepoForked, GoStar } from "react-icons/go"
 
-export default function Repo(data: repo) {
+export default function Repo({ data, staggerId }: { data: repo, staggerId: number }) {
 	return (
-		<a href={data.html_url} className="group">
+		<a href={data.html_url} className="animate-repoCardEnter opacity-0" style={{ animationDelay: `${staggerId * 0.03}s` }}>
 			<div className="flex flex-col group-hover:scale-95 ease-in-out duration-300">
 				<div className="flex flex-row justify-center items-center gap-1 bg-stone-800 group-hover:bg-stone-700 ease-in-out duration-300 p-2 rounded-t-xl text-lg md:p-4 md:text-2xl">
 					{data.fork ? <GoRepoForked /> : <GoRepo />}

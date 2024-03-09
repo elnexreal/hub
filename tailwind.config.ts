@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        repoCardEnter: "cardEnter 1s forwards"
+      },
+      keyframes: {
+        cardEnter: {
+          "0%": { opacity: "0%", translate: "0px 160px" },
+          "100%": { opacity: "100%", translate: "0px 0px" }
+        }
+      },
       fontFamily: {
         Kodemono: ["Kode-Mono", "monospace"]
       },

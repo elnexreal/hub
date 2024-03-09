@@ -67,7 +67,12 @@ export default function Home() {
 			<div id="projects" className="flex flex-col items-center gap-8">
 				<h1 className="text-3xl md:text-5xl">GitHub repositories</h1>
 				<div className="flex flex-wrap justify-center gap-8 md:flex-row">
-					{loaded ? repos.map((repo, index) => <Repo key={index} {...repo} />) : <span>Loading</span>}
+					{loaded
+						? repos.map((repo, index) =>
+							<Repo key={index} data={repo} staggerId={index} />
+						)
+
+						: <span>Getting repos list</span>}
 				</div>
 			</div>
 		</div>
