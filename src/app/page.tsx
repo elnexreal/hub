@@ -72,7 +72,7 @@ export default function Home() {
 							<Repo key={index} data={repo} staggerId={index} />
 						)
 
-						: <span>Getting repos list</span>}
+						: <span className="animate-pulse">Getting repos list</span>}
 				</div>
 			</div>
 		</div>
