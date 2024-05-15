@@ -57,7 +57,7 @@ export default function Home() {
 					</div>
 					<div>
 						<h3 className="text-lg md:text-2xl opacity-50">Extras...</h3>
-						<p className="text-sm md:text-lg">NodeJS, NPM, Pip, Yarn.</p>
+						<p className="text-sm md:text-lg">NodeJS, NPM, Pip, Yarn, Docker, GitHub Actions.</p>
 					</div>
 				</div>
 			</div>
